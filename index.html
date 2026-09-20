@@ -1,85 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./style.css"></head>
-<body>
-    <div class="whole">
-  <div class="background"></div>
-    <div class="bck">
-     <img src="logo.png" alt="" class="logo">
-     <div class="in">
-      <h3 class="item">Models</h3>
-      <h3 class="item">About BYD</h3>
-      <h3 class="item">Services</h3>
-      <h3 class="item">Contact &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <i class="fa-solid fa-location-dot"></i> Find BYD Store &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-globe"></i>
-      </h3>
-     </div>
-     </div>
-</div>
-     <img src=".//pic---1.webp" alt="" height="1130" width="100%">
-     <img src="./pic---2.webp" alt="" height="1130" width="100%">
- <div class="over">
-    <div><h2>Blade Battery</h2><p class="mine">Ultra-Safe</p></div>
-    <div class="talah"><h2>30 minutes</h2><p class="mine">30% to 80% fast charge</p></div>
-    <div class="myn"><h2>e-Platform 3.0</h2><p class="mine">Emphasizing intelligence efficiency, safety, and aesthetics</p></div>
- </div>
- <!-- <img src="./byd pic.webp" alt="" height="1130" width="100%"> -->
-<div class="yo">
-        <div><h2>The newest family member of the Ocean Series</h2>
-        <p class="mine">The BYD DOLPHIN SURF is the most individual and dynamic member of the Ocean Series, interpreting the strong vitality <br> of the “Ocean Aesthetics” with its sharp shape and fierce style.</p></div>
-</div>
-<img src="./pic---3.webp" alt=""  height="1130" width="100%">
-<div class="to">
-    <div><h2>Ocean Aesthetics Design</h2>
-    <p class="mine">A new sweeping integrated body contour for the BYD DOLPHIN SURF. The single-arc silhouette makes the overall shape more <br> impactful and the lines are smart and smooth. Get ready with the BYD DOLPHIN SURF.</p></div>
-</div>
-<div class="jo">
-    <div><h2 class="plus">+</h2>
-    <p class="time">Learn more</p></div>
-</div>
-<img src="./pic---4.webp" alt=""  height="1130" width="100%">
-<div class="po">
-    <h2>Ocean Chic Cabin</h2>
-    <div class="ho">
-        <h2 class="plug"> +</h2>
-        <p>Learn more</p>
-    </div>
-    
-</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BYD DOLPHIN SURF — the most individual member of the Ocean Series. Blade Battery safety, e-Platform 3.0, and Ocean Aesthetics design."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>BYD DOLPHIN SURF | Ocean Series</title>
+    <link rel="icon" href="./assets/images/logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
+    <header class="site-header" id="top">
+      <div class="site-header__inner">
+        <a class="brand" href="#top" aria-label="BYD home">
+          <img src="./assets/images/logo.png" alt="BYD" width="120" height="36" />
+        </a>
 
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <a href="#models">Models</a>
+          <a href="#about">About BYD</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
- <img src="./pic---5.webp" height="1130" width="100%" alt="">
-<div class="no">
-    <div><h2>Comprehensive Security Protection</h2>
-    <p class="mine">Safety is the greatest luxury". BYD DOLPHIN SURF comes standard with airbags for the driver and passenger, as well as front and <br> rear side curtain airbags. The high-end trim even includes front-seat side airbags, which help minimize or eliminate harm during <br> collisions.
-    </div>
-</div>
+        <div class="header-actions">
+          <button class="text-btn" type="button" data-open="store-dialog" aria-label="Find a BYD store">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"
+              />
+            </svg>
+            <span class="text-btn__label">Find BYD Store</span>
+          </button>
+          <button class="icon-btn" type="button" aria-label="Language: English">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6" />
+              <path
+                d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+            </svg>
+            <span>EN</span>
+          </button>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            aria-label="Open menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-     <img src="./pic---6.webp" height="1130" width="100%" alt="">
-<div class="so">
-    <div><h2>e-Platform 3.0</h2>
-    <p class="mine">The BYD DOLPHIN SURF features the super-safe "blade battery" and inherits the safety attributes of the e-platform 3.0, bringing <br> users a safe body structure exclusive to pure electric vehicles.
-</div>
-</div>
+    <main id="main">
+      <section class="hero stage" aria-label="BYD Dolphin Surf hero">
+        <img
+          class="stage__media"
+          src="./assets/images/hero.webp"
+          alt="BYD Dolphin Surf in urban yellow driving past colourful buildings"
+          width="2880"
+          height="1620"
+        />
+        <div class="stage__scrim"></div>
+        <div class="stage__content hero__content">
+          <p class="eyebrow">Ocean Series</p>
+          <h1>BYD DOLPHIN SURF</h1>
+          <p class="lede">Individual. Dynamic. Built for the city.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#highlights">Explore</a>
+            <a class="btn btn--ghost" href="#brochure">Download brochure</a>
+          </div>
+        </div>
+      </section>
 
-   <img src="./pic---7.webp" height="1130" width="100%" alt="">
-   <img src="./why.webp" alt="" height="1130" width="100%">
-<div class="io">
-    <div>
-        <h2>BYD DOLPHIN SURF</h2>
-    </div >
-        
-</div>
-<a href="" class="button">DOWNLOAD BROCHURE</a>
+      <section class="stage" id="highlights">
+        <img
+          class="stage__media"
+          src="./assets/images/highlights.webp"
+          alt="BYD Dolphin Surf parked against warm architectural walls"
+          width="2880"
+          height="1620"
+        />
+        <div class="stage__scrim stage__scrim--bottom"></div>
+        <div class="stage__content">
+          <ul class="stats">
+            <li>
+              <strong>Blade Battery</strong>
+              <span>Ultra-safe</span>
+            </li>
+            <li>
+              <strong>30 minutes</strong>
+              <span>30% to 80% fast charge</span>
+            </li>
+            <li>
+              <strong>e-Platform 3.0</strong>
+              <span>Intelligence, efficiency, safety, and aesthetics</span>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-</body>
+      <section class="stage" id="models">
+        <img
+          class="stage__media"
+          src="./assets/images/ocean-series.webp"
+          alt="BYD Dolphin Surf crossing a city street"
+          width="2880"
+          height="1620"
+        />
+        <div class="stage__scrim"></div>
+        <div class="stage__content stage__content--center">
+          <p class="eyebrow">Models</p>
+          <h2>The newest family member of the Ocean Series</h2>
+          <p>
+            The BYD DOLPHIN SURF is the most individual and dynamic member of the Ocean Series,
+            interpreting the strong vitality of Ocean Aesthetics with its sharp shape and fierce
+            style.
+          </p>
+        </div>
+      </section>
+
+      <section class="stage" id="design">
+        <img
+          class="stage__media"
+          src="./assets/images/exterior.webp"
+          alt="Side profile of the BYD Dolphin Surf against a pale sky"
+          width="2880"
+          height="1620"
+        />
+        <div class="stage__scrim stage__scrim--bottom"></div>
+        <div class="stage__content stage__content--split">
+          <div>
+            <h2>Ocean Aesthetics Design</h2>
+            <p>
+              A sweeping integrated body contour. The single-arc silhouette makes the overall shape
+              more impactful, with lines that stay smart and smooth.
+            </p>
+          </div>
+          <button class="learn-more" type="button" data-open="design-dialog">
+            <span class="plus" aria-hidden="true">+</span>
+            Learn more
+          </button>
+        </div>
+      </section>
+
+      <section class="stage" id="cabin">
+        <img
+          class="stage__media"
+          src="./assets/images/interior.webp"
+          alt="Ocean Chic Cabin interior with panoramic glass roof and rotating screen"
+          width="2880"
+          height="1620"
+        />
+        <div class="stage__scrim stage__scrim--bottom"></div>
+        <div class="stage__content stage__content--split">
+          <h2>Ocean Chic Cabin</h2>
+          <button class="learn-more" type="button" data-open="cabin-dialog">
+            <span class="plus" aria-hidden="true">+</span>
+            Learn more
+          </button>
+        </div>
+      </section>
+
+      <section class="stage" id="safety">
+        <img
+          class="stage__media"
+          src="./assets/images/safety.webp"
+          alt="Cutaway view showing airbags throughout the Dolphin Surf cabin"
+          width="2880"
+          height="1620"
+        />
+        <div class="stage__scrim"></div>
+        <div class="stage__content stage__content--center">
+          <h2>Comprehensive security protection</h2>
+          <p>
+            Safety is the greatest luxury. BYD DOLPHIN SURF comes standard with driver and passenger
+            airbags, plus front and rear side curtain airbags. Higher trims add front-seat side
+            airbags to help reduce harm in a collision.
+          </p>
+        </div>
+      </section>
+
+      <section class="stage" id="platform">
+        <img
+          class="stage__media"
+          src="./assets/images/platform.webp"
+          alt="Transparent body revealing the Blade Battery and e-Platform 3.0 layout"
+          width="2880"
+          height="1620"
+        />
+        <div class="stage__scrim"></div>
+        <div class="stage__content stage__content--center">
+          <h2>e-Platform 3.0</h2>
+          <p>
+            The BYD DOLPHIN SURF features the super-safe Blade Battery and inherits the safety
+            attributes of e-Platform 3.0, bringing a body structure exclusive to pure electric
+            vehicles.
+          </p>
+        </div>
+      </section>
+
+      <section class="stage stage--wide" id="brochure">
+        <img
+          class="stage__media"
+          src="./assets/images/lifestyle.webp"
+          alt="Dolphin Surf charging beside a modern home while two people sit outdoors"
+          width="2880"
+          height="1440"
+        />
+        <div class="stage__scrim stage__scrim--left"></div>
+        <div class="stage__content stage__content--left">
+          <p class="eyebrow">Ready when you are</p>
+          <h2>BYD DOLPHIN SURF</h2>
+          <a class="btn btn--solid" href="./assets/brochure.html" download>Download brochure</a>
+        </div>
+      </section>
+
+      <section class="panel" id="about">
+        <div class="panel__grid">
+          <div>
+            <p class="eyebrow">About BYD</p>
+            <h2>Build Your Dreams</h2>
+            <p>
+              BYD is a global new-energy pioneer, spanning passenger vehicles, batteries, and
+              electronics. From Blade Battery technology to e-Platform 3.0, every Dolphin Surf
+              carries decades of electric innovation onto the street.
+            </p>
+          </div>
+          <ul class="facts">
+            <li>
+              <strong>30+</strong>
+              <span>Years of new-energy research</span>
+            </li>
+            <li>
+              <strong>70+</strong>
+              <span>Countries and regions served</span>
+            </li>
+            <li>
+              <strong>1</strong>
+              <span>Mission: safer, smarter mobility</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel panel--muted" id="services">
+        <p class="eyebrow">Services</p>
+        <h2>Ownership, made simple</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Charging</h3>
+            <p>Home wallbox guidance and public DC fast-charge mapping for everyday range confidence.</p>
+          </article>
+          <article class="card">
+            <h3>Warranty</h3>
+            <p>Comprehensive vehicle coverage with dedicated Blade Battery protection for long-term peace of mind.</p>
+          </article>
+          <article class="card">
+            <h3>Care</h3>
+            <p>Authorised technicians, genuine parts, and over-the-air updates that keep the Surf current.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="contact">
+        <div class="panel__grid">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Talk to BYD</h2>
+            <p>
+              Book a test drive, ask about availability, or find a store near you. A specialist will
+              follow up on the details you share.
+            </p>
+          </div>
+          <form class="contact-form" id="contact-form" novalidate>
+            <label>
+              Name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button class="btn btn--solid" type="submit">Send message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <img src="./assets/images/logo.png" alt="BYD" width="88" height="26" />
+        <p>© <span id="year"></span> BYD Company Limited. All rights reserved.</p>
+        <nav aria-label="Footer">
+          <a href="#models">Models</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <dialog class="modal" id="store-dialog" aria-labelledby="store-title">
+      <form method="dialog">
+        <button class="modal__close" value="close" aria-label="Close">×</button>
+      </form>
+      <h2 id="store-title">Find a BYD store</h2>
+      <ul class="store-list">
+        <li>
+          <strong>BYD City Centre</strong>
+          <span>12 Harbour Street · Open 09:00–19:00</span>
+        </li>
+        <li>
+          <strong>BYD West Mall</strong>
+          <span>88 Ocean Drive · Open 10:00–20:00</span>
+        </li>
+        <li>
+          <strong>BYD Airport Park</strong>
+          <span>4 Terminal Avenue · Open 09:00–18:00</span>
+        </li>
+      </ul>
+    </dialog>
+
+    <dialog class="modal" id="design-dialog" aria-labelledby="design-title">
+      <form method="dialog">
+        <button class="modal__close" value="close" aria-label="Close">×</button>
+      </form>
+      <h2 id="design-title">Ocean Aesthetics</h2>
+      <p>
+        The Dolphin Surf’s single-arc silhouette, floating C-pillar, and athletic stance translate
+        ocean energy into a compact urban form. LED blades, sculpted flanks, and a planted stance
+        keep the design sharp from every angle.
+      </p>
+    </dialog>
+
+    <dialog class="modal" id="cabin-dialog" aria-labelledby="cabin-title">
+      <form method="dialog">
+        <button class="modal__close" value="close" aria-label="Close">×</button>
+      </form>
+      <h2 id="cabin-title">Ocean Chic Cabin</h2>
+      <p>
+        Soft dual-tone surfaces, a rotating infotainment display, and a panoramic glass roof create
+        a calm, light-filled cabin. Driver-focused controls sit low so the view out stays open and
+        uncluttered.
+      </p>
+    </dialog>
+
+    <script src="./js/main.js" defer></script>
+  </body>
 </html>
