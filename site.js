@@ -197,41 +197,72 @@ function showCookieStatus(choice) {
 
 showCookieStatus(localStorage.getItem("byd-cookie-preference"));
 
-function splitTitle(el) {
-  if (!el || el.dataset.split === "true") return;
-  const text = el.textContent.trim();
-  el.dataset.split = "true";
-  el.setAttribute("aria-label", text);
-  el.innerHTML = [...text].map((char, index) => {
-    if (char === " ") return " ";
-    return `<span class="char" style="--i:${index}">${char}</span>`;
-  }).join("");
+function markReveal(el, direction, delay) {
+  if (!el) return;
+  el.classList.add("reveal", `reveal-${direction}`);
+  if (delay) el.style.transitionDelay = `${delay}s`;
 }
 
-document.querySelectorAll(".hero-copy h1, .subpage-hero h1").forEach(splitTitle);
+function watchWhenInFront(targets, visibleClass) {
+  const pending = new Set(targets.filter(Boolean));
+  if (!pending.size) return;
 
-document.querySelectorAll(
-  ".hero-copy, .section-copy, .stats, .cta-copy, .learn-more, .info-card, .store-card, .subpage-hero, .contact-form, .legal-article"
-).forEach((el) => el.classList.add("reveal"));
+  const revealVisible = () => {
+    const viewTop = window.innerHeight * 0.1;
+    const viewBottom = window.innerHeight * 0.88;
+    pending.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom <= viewTop || rect.top >= viewBottom) return;
+      el.classList.add(visibleClass);
+      pending.delete(el);
+      io.unobserve(el);
+    });
+    if (!pending.size) {
+      window.removeEventListener("scroll", revealVisible);
+      window.removeEventListener("resize", revealVisible);
+    }
+  };
 
-document.querySelectorAll(".hero-copy, .hero .stats, .subpage-hero").forEach((el) => {
-  el.classList.add("is-visible");
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add(visibleClass);
+      pending.delete(entry.target);
+      io.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: "-8% 0px -16% 0px"
+  });
+
+  pending.forEach((el) => io.observe(el));
+  window.addEventListener("scroll", revealVisible, { passive: true });
+  window.addEventListener("resize", revealVisible);
+  window.setTimeout(revealVisible, 0);
+}
+
+document.querySelectorAll(".hero-copy, .section-copy, .cta-copy").forEach((block, index) => {
+  markReveal(block, index % 2 === 0 ? "left" : "right");
 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("is-visible");
-    observer.unobserve(entry.target);
-  });
-}, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+document.querySelectorAll(".section-copy p, .cta-copy p, .cta-note").forEach((el) => {
+  markReveal(el, "up", 0.14);
+});
 
-document.querySelectorAll(".reveal, .footer-grid").forEach((el) => observer.observe(el));
+document.querySelectorAll(".cta-copy .brochure-btn").forEach((el) => markReveal(el, "up", 0.22));
+document.querySelectorAll(".subpage-hero h1").forEach((el) => markReveal(el, "left"));
+document.querySelectorAll(".subpage-hero .lead").forEach((el) => markReveal(el, "right", 0.12));
+document.querySelectorAll(".subpage-body > p").forEach((el) => markReveal(el, "up"));
+document.querySelectorAll(".learn-more").forEach((el) => markReveal(el, "up"));
+document.querySelectorAll(".contact-form, .legal-article").forEach((el) => markReveal(el, "up"));
 
-const panelObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    entry.target.classList.toggle("is-inview", entry.isIntersecting);
-  });
-}, { threshold: 0.35 });
+document.querySelectorAll(".info-card, .store-card").forEach((el, index) => {
+  markReveal(el, index % 2 === 0 ? "left" : "right", (index % 4) * 0.08);
+});
 
-document.querySelectorAll(".panel").forEach((el) => panelObserver.observe(el));
+document.querySelectorAll(".panel").forEach((el, index) => {
+  el.classList.add(index % 2 === 0 ? "img-from-right" : "img-from-left");
+});
+
+watchWhenInFront([...document.querySelectorAll(".reveal, .stats, .footer-grid")], "is-visible");
+watchWhenInFront([...document.querySelectorAll(".panel")], "is-inview");
