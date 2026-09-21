@@ -254,6 +254,14 @@ button {
   border-left: 1px solid rgba(255, 255, 255, 0.45);
 }
 
+.stats-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hero .stats {
+  bottom: clamp(24px, 6vh, 64px);
+}
+
 .stats h2 {
   font-size: clamp(1.35rem, 2.6vw, 2rem);
   font-weight: 600;
@@ -332,6 +340,13 @@ button {
   left: clamp(24px, 8vw, 120px);
   bottom: clamp(48px, 12vh, 120px);
   text-align: left;
+}
+
+.cta-note {
+  margin-top: 10px;
+  max-width: 420px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .brochure-btn {
@@ -426,6 +441,16 @@ button {
   .nav-list {
     gap: 8px 16px;
   }
+
+  .stats-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats-4 li:nth-child(3),
+  .stats-4 li:nth-child(4) {
+    border-left: 0;
+    padding-top: 18px;
+  }
 }
 
 @media (max-width: 860px) {
@@ -492,7 +517,8 @@ button {
     background: #222;
   }
 
-  .stats {
+  .stats,
+  .stats-4 {
     grid-template-columns: 1fr;
     gap: 18px;
   }
