@@ -427,6 +427,162 @@ button {
   color: #9a9a9a;
 }
 
+.region-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subpage {
+  background: #111;
+  color: #e8e8e8;
+  min-height: 70vh;
+}
+
+.subpage-hero {
+  padding: clamp(48px, 10vh, 96px) 8vw 32px;
+  background: linear-gradient(180deg, #1a1a1a, #111);
+}
+
+.subpage-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: #fff;
+}
+
+.subpage-hero .lead {
+  margin-top: 14px;
+  max-width: 720px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #cfcfcf;
+}
+
+.subpage-body {
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 24px 0 80px;
+}
+
+.subpage-body h2 {
+  margin: 28px 0 10px;
+  color: #fff;
+  font-size: 1.35rem;
+}
+
+.subpage-body p,
+.subpage-body li {
+  line-height: 1.7;
+  color: #d5d5d5;
+}
+
+.subpage-body ul {
+  padding-left: 1.2rem;
+  margin: 8px 0 16px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.info-card,
+.store-card {
+  background: #1c1c1c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+}
+
+.info-card h3,
+.store-card h3 {
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.info-card a,
+.store-card a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.store-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.store-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.store-actions a {
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.store-actions a:hover {
+  background: #fff;
+  color: #111;
+}
+
+.filter-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 12px 0 24px;
+}
+
+.filter-row select,
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: #161616;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 12px;
+  font: inherit;
+  width: 100%;
+}
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+  max-width: 560px;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.form-status {
+  margin-top: 12px;
+  color: #9fdfb3;
+}
+
+.legal-article {
+  max-width: 760px;
+}
+
+.legal-article h2 {
+  margin-top: 32px;
+}
+
+@media (max-width: 560px) {
+  .subpage-body {
+    width: calc(100% - 32px);
+  }
+}
+
 @media (max-width: 1180px) {
   .store-link span {
     display: none;

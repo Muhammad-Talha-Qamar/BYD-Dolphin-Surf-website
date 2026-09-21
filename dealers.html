@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a BYD Store | BYD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header" data-chrome="header"></header>
+  <main class="subpage">
+    <section class="subpage-hero">
+      <h1>Find a BYD Store</h1>
+      <p class="lead">Visit a dealer for a test drive, or send an enquiry and a BYD Egypt store will contact you.</p>
+    </section>
+    <section class="subpage-body">
+      <div class="filter-row">
+        <label for="city-filter">City</label>
+        <select id="city-filter">
+          <option value="all">All cities</option>
+          <option value="cairo">Cairo</option>
+          <option value="alexandria">Alexandria</option>
+          <option value="upper">Upper Egypt &amp; Red Sea</option>
+        </select>
+      </div>
+
+      <div class="card-grid">
+        <article class="store-card" data-city="cairo">
+          <h3>Katameya — New Cairo</h3>
+          <p>El Shaheed Street, Katameya, New Cairo</p>
+          <div class="store-actions">
+            <a href="tel:01200800005">Call 01200800005</a>
+            <a href="https://maps.google.com/?q=Katameya+New+Cairo" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+        </article>
+        <article class="store-card" data-city="cairo">
+          <h3>Sharabia — Cairo</h3>
+          <p>4 Soap Factory Street, Sharabia</p>
+          <div class="store-actions">
+            <a href="tel:01200800005">Call 01200800005</a>
+            <a href="https://maps.google.com/?q=Sharabia+Cairo" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+        </article>
+        <article class="store-card" data-city="alexandria">
+          <h3>Amreya — Alexandria</h3>
+          <p>Km 27 Alexandria–Cairo Road, Amreya</p>
+          <div class="store-actions">
+            <a href="tel:01200800005">Call 01200800005</a>
+            <a href="https://maps.google.com/?q=Amreya+Alexandria" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+        </article>
+        <article class="store-card" data-city="upper">
+          <h3>Beni Suef / Hurghada</h3>
+          <p>Abu Hatta Motors</p>
+          <div class="store-actions">
+            <a href="tel:19788">Call 19788</a>
+            <a href="https://maps.google.com/?q=Hurghada" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+        </article>
+        <article class="store-card" data-city="upper">
+          <h3>Qena / Luxor / Aswan</h3>
+          <p>Al Karnak Company</p>
+          <div class="store-actions">
+            <a href="tel:01204319999">Call 01204319999</a>
+            <a href="https://maps.google.com/?q=Luxor" target="_blank" rel="noopener">Open in Maps</a>
+          </div>
+        </article>
+      </div>
+
+      <h2>Send an enquiry</h2>
+      <form class="contact-form" id="enquiry-form">
+        <label>Name
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>Phone
+          <input type="tel" name="phone" required autocomplete="tel">
+        </label>
+        <label>Model
+          <select name="model" required>
+            <option value="BYD DOLPHIN SURF">BYD DOLPHIN SURF</option>
+            <option value="BYD SEALION 6">BYD SEALION 6</option>
+            <option value="BYD SEALION 6 DM-i">BYD SEALION 6 DM-i</option>
+          </select>
+        </label>
+        <label>Message
+          <textarea name="message" rows="4" placeholder="Test drive, pricing, or availability"></textarea>
+        </label>
+        <button class="brochure-btn" type="submit">Send enquiry</button>
+        <p class="form-status" id="form-status" hidden></p>
+      </form>
+      <p style="margin-top:24px"><a href="./service.html">Service &amp; maintenance centres</a></p>
+    </section>
+  </main>
+  <footer class="site-footer" id="footer" data-chrome="footer"></footer>
+  <script src="./site.js"></script>
+</body>
+</html>

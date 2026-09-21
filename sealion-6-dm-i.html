@@ -11,58 +11,7 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="logo-link" href="./index.html" aria-label="BYD home">
-        <img src="./logo.png" alt="BYD" class="logo">
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="site-nav" id="site-nav">
-        <ul class="nav-list">
-          <li class="has-menu">
-            <button type="button">Models</button>
-            <ul class="dropdown">
-              <li><a href="./index.html">BYD DOLPHIN SURF</a></li>
-              <li><a href="./sealion-6.html">BYD SEALION 6</a></li>
-              <li><a href="./sealion-6-dm-i.html">BYD SEALION 6 DM-i</a></li>
-            </ul>
-          </li>
-          <li class="has-menu">
-            <button type="button">About BYD</button>
-            <ul class="dropdown">
-              <li><a href="#footer">About BYD</a></li>
-            </ul>
-          </li>
-          <li class="has-menu">
-            <button type="button">Technology</button>
-            <ul class="dropdown">
-              <li><a href="#technology">BYD Blade Battery</a></li>
-              <li><a href="./sealion-6.html">BYD e-Platform 3.0</a></li>
-              <li><a href="#technology">BYD Super DM</a></li>
-            </ul>
-          </li>
-          <li class="has-menu">
-            <button type="button">Services</button>
-            <ul class="dropdown">
-              <li><a href="#footer">Service Maintenance</a></li>
-            </ul>
-          </li>
-          <li><a href="#footer">Visit Dealer</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <a class="store-link" href="#footer">
-          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-          <span>Find a BYD Store</span>
-        </a>
-        <button class="region-btn" type="button" aria-label="Select region">
-          <i class="fa-solid fa-globe" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-  </header>
+  <header class="site-header" data-chrome="header"></header>
 
   <main id="top">
     <section class="hero panel stats-panel">
@@ -182,44 +131,7 @@
     </section>
   </main>
 
-  <footer class="site-footer" id="footer">
-    <div class="footer-grid">
-      <div>
-        <h3>About BYD</h3>
-        <a href="./index.html">About BYD</a>
-      </div>
-      <div>
-        <h3>Technology</h3>
-        <a href="#technology">BYD Blade Battery</a>
-        <a href="#technology">BYD Super DM</a>
-        <a href="./sealion-6.html">BYD e-Platform 3.0</a>
-        <a href="#technology">What is a NEV</a>
-      </div>
-      <div>
-        <h3>Services</h3>
-        <a href="#footer">Service Maintenance</a>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <a href="#footer">Visit Dealer</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="legal-links">
-        <a href="#footer">Privacy &amp; Legal</a>
-        <a href="#footer">Cookies</a>
-        <a href="#footer">Data Privacy</a>
-      </div>
-      <div class="social">
-        <span>FOLLOW US</span>
-        <a href="#footer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#footer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#footer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="#footer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
-    </div>
-    <p class="copyright">© 2022 BYD Auto Industry Co., Ltd. All rights reserved.</p>
-  </footer>
+  <footer class="site-footer" id="footer" data-chrome="footer"></footer>
   <script src="./site.js"></script>
 </body>
 </html>
