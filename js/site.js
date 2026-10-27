@@ -2,7 +2,7 @@ function headerHTML() {
   return `
     <div class="header-inner">
       <a class="logo-link" href="./index.html" aria-label="BYD home">
-        <span class="logo-text">BYD</span>
+        <img src="./images/brand/logo.png?v=20261027e" alt="BYD" class="logo">
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span></span><span></span><span></span>

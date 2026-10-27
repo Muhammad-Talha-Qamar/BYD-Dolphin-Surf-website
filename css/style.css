@@ -122,28 +122,26 @@ button {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  background: none;
+  background: transparent;
   border: 0;
   padding: 0;
 }
 
-.logo-text {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
-  letter-spacing: 0.12em;
-  line-height: 1;
-  color: #fff;
+.logo {
+  display: block;
+  height: 28px;
+  width: auto;
   background: transparent;
   border: 0;
   box-shadow: none;
-  text-shadow: none;
-  transition: opacity 0.25s ease;
+  /* Transparent PNG — white mark only, no dark plate over the glass nav */
+  mix-blend-mode: normal;
+  transition: transform 0.35s var(--ease-out), filter 0.35s ease, opacity 0.25s ease;
 }
 
-.logo-link:hover .logo-text {
-  color: #fff;
-  opacity: 0.88;
+.logo-link:hover .logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(62, 199, 214, 0.35));
 }
 
 .site-nav {
