@@ -770,20 +770,18 @@ button {
 .stats li {
   padding: 14px 16px;
   border-radius: var(--radius-md);
-  background: rgba(10, 14, 20, 0.4);
+  background: rgba(10, 14, 20, 0.55);
   border: 0;
-  outline: 1px solid rgba(255, 255, 255, 0.1);
-  outline-offset: -1px;
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  box-shadow: var(--shadow-soft);
-  opacity: 0;
+  outline: none;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  opacity: 1;
+  color: #fff;
   transition:
-    opacity var(--dur-slow) var(--ease-soft),
-    transform var(--dur-slow) var(--ease-soft),
-    background var(--dur-fast) ease,
-    box-shadow var(--dur-fast) ease,
-    outline-color var(--dur-fast) ease;
+    transform 0.7s var(--ease-out),
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .stats li:hover {
