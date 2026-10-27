@@ -115,13 +115,25 @@ if (menuToggle && nav) {
   });
 }
 
+const mobileNavMq = window.matchMedia("(max-width: 860px)");
+
 document.querySelectorAll(".has-menu > button").forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
+    // Desktop: hover opens/closes the menu; clicks must not pin it open.
+    if (!mobileNavMq.matches) {
+      event.preventDefault();
+      return;
+    }
     const item = button.parentElement;
     const already = item.classList.contains("is-open");
     document.querySelectorAll(".has-menu").forEach((el) => el.classList.remove("is-open"));
     if (!already) item.classList.add("is-open");
   });
+});
+
+// Clear any sticky open state when leaving mobile breakpoints
+mobileNavMq.addEventListener("change", () => {
+  document.querySelectorAll(".has-menu").forEach((el) => el.classList.remove("is-open"));
 });
 
 document.querySelectorAll(".learn-more").forEach((button) => {
