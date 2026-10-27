@@ -1735,6 +1735,7 @@ button {
   transform: none;
 }
 
+.hero-copy,
 .hero-copy.reveal,
 .hero-copy.reveal-up,
 .hero-copy.reveal-left,
@@ -1742,7 +1743,7 @@ button {
 .hero-copy.reveal.is-visible,
 .hero-copy.reveal-left.is-visible,
 .hero-copy.reveal-right.is-visible {
-  transform: translateX(-50%);
+  transform: translateX(-50%) !important;
 }
 
 .section-copy.copy-left.reveal-left {
