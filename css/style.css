@@ -83,23 +83,23 @@ button {
   cursor: pointer;
 }
 
-/* ——— Header (clean glass, no hard borders) ——— */
+/* ——— Header (always translucent glass) ——— */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
   color: var(--ink);
   padding: 0;
-  background: rgba(8, 12, 18, 0.35);
+  background: rgba(8, 12, 18, 0.28);
   border: 0;
   box-shadow: none;
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: blur(16px) saturate(1.25);
+  -webkit-backdrop-filter: blur(16px) saturate(1.25);
   transition: background 0.35s var(--ease-out);
 }
 
 .site-header.is-scrolled {
-  background: rgba(8, 12, 18, 0.55);
+  background: rgba(8, 12, 18, 0.42);
 }
 
 .header-inner {
@@ -118,16 +118,30 @@ button {
   box-shadow: none;
 }
 
-.logo {
-  height: 28px;
-  width: auto;
-  mix-blend-mode: lighten;
-  transition: transform 0.35s var(--ease-out), filter 0.35s ease;
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background: none;
+  border: 0;
+  padding: 0;
 }
 
-.logo-link:hover .logo {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 10px rgba(62, 199, 214, 0.35));
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: #fff;
+  background: none;
+  text-shadow: none;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.logo-link:hover .logo-text {
+  color: #fff;
+  opacity: 0.88;
 }
 
 .site-nav {
