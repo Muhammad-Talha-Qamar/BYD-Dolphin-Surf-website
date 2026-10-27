@@ -1487,6 +1487,19 @@ button {
   }
 }
 
+@keyframes panel-in-ltr {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
 @media (max-width: 860px) {
   .header-inner {
     grid-template-columns: 40px 1fr auto;
@@ -1579,7 +1592,15 @@ button {
   .stats,
   .stats-4 {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
+    width: min(240px, 58vw);
+    left: 16px;
+    right: auto;
+    transform: none;
+  }
+
+  .stats li {
+    padding: 10px 12px;
   }
 
   .panel,
@@ -1587,25 +1608,50 @@ button {
     min-height: 70vh;
   }
 
+  .panel > img {
+    object-position: 68% center;
+  }
+
   .hero,
   .hero > img {
     min-height: 100svh;
+  }
+
+  .hero > img {
+    object-position: 72% center;
   }
 
   .overlay-top {
     top: 28px;
   }
 
+  /* Keep overlay cards on the left so the car stays visible on the right */
   .section-copy,
   .section-copy.copy-left,
-  .section-copy.copy-right {
+  .section-copy.copy-right,
+  .section-copy.copy-center,
+  .overlay-center.section-copy {
     top: clamp(20px, 4vh, 40px);
     bottom: auto;
     left: 16px;
     right: auto;
-    width: min(300px, calc(100% - 32px));
+    width: min(220px, 56vw);
+    max-width: 56vw;
     transform: none;
     text-align: left;
+    padding: 10px 12px;
+  }
+
+  .section-copy.copy-center h2::after,
+  .overlay-center.section-copy h2::after {
+    margin-inline: 0;
+  }
+
+  .section-copy p,
+  .section-copy.copy-center p,
+  .overlay-center.section-copy p {
+    margin-inline: 0;
+    -webkit-line-clamp: 3;
   }
 
   .stats-panel .section-copy,
@@ -1619,41 +1665,80 @@ button {
     display: none;
   }
 
-  .section-copy.copy-center,
-  .overlay-center.section-copy {
-    top: clamp(20px, 4vh, 40px);
-    bottom: auto;
-    left: 50%;
-    right: auto;
-    width: min(300px, calc(100% - 32px));
-    transform: translateX(-50%);
-    text-align: center;
+  /* When learn-more opens, clear the section card so both don't stack over the car */
+  .panel:has(.learn-more.is-open) .section-copy {
+    opacity: 0 !important;
+    pointer-events: none;
+    transform: translateX(-16px) !important;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   .more-panel {
-    top: clamp(100px, 18vh, 160px);
+    left: 16px;
+    right: auto;
+    top: clamp(72px, 11vh, 110px);
     bottom: auto;
-    max-height: 38vh;
+    width: min(240px, 58vw);
+    max-width: 58vw;
+    max-height: min(46vh, 320px);
+    height: auto;
+    transform: none;
     overflow: auto;
+    padding: 10px;
+    gap: 8px;
+    animation: panel-in-ltr 0.4s var(--ease-soft) forwards;
+  }
+
+  .more-panel article {
+    padding: 10px 12px;
+  }
+
+  .more-panel h3 {
+    font-size: 0.9rem;
+  }
+
+  .more-panel p {
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
 
   .cta-copy {
     top: clamp(20px, 4vh, 40px);
     left: 16px;
-    right: 16px;
-    max-width: none;
-    width: auto;
+    right: auto;
+    max-width: min(240px, 56vw);
+    width: min(240px, 56vw);
   }
 
   .hero-copy {
     top: clamp(16px, 3vh, 28px);
     bottom: auto;
-    width: min(300px, calc(100% - 28px));
+    left: 16px;
+    right: auto;
+    width: min(230px, 56vw);
+    max-width: 56vw;
     padding: 12px 14px;
+    text-align: left;
+  }
+
+  .hero-copy,
+  .hero-copy.reveal,
+  .hero-copy.reveal-up,
+  .hero-copy.reveal-left,
+  .hero-copy.reveal-right,
+  .hero-copy.reveal.is-visible,
+  .hero-copy.reveal-left.is-visible,
+  .hero-copy.reveal-right.is-visible {
+    transform: none !important;
+  }
+
+  .hero-tagline {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .hero-actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .footer-grid,
@@ -1669,10 +1754,11 @@ button {
 
 @media (max-width: 560px) {
   .cta-copy {
-    left: 16px;
-    right: 16px;
-    width: auto;
-    max-width: none;
+    left: 12px;
+    right: auto;
+    width: min(200px, 54vw);
+    max-width: 54vw;
+    padding: 10px 12px;
   }
 
   .cta-actions {
@@ -1681,15 +1767,64 @@ button {
   }
 
   .hero-copy {
-    width: min(280px, calc(100% - 28px));
+    left: 12px;
+    width: min(200px, 54vw);
+    max-width: 54vw;
+    padding: 10px 12px;
   }
 
   .hero-copy h1 {
-    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    font-size: clamp(1.2rem, 5.5vw, 1.55rem);
+  }
+
+  .hero-tagline {
+    font-size: 0.82rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-actions .btn {
     flex: 0 1 auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-copy,
+  .section-copy.copy-left,
+  .section-copy.copy-right,
+  .section-copy.copy-center,
+  .overlay-center.section-copy {
+    left: 12px;
+    width: min(190px, 52vw);
+    max-width: 52vw;
+    padding: 9px 11px;
+  }
+
+  .section-copy h2 {
+    font-size: clamp(1.05rem, 4.6vw, 1.25rem);
+  }
+
+  .section-copy p {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 3;
+  }
+
+  .more-panel {
+    left: 12px;
+    width: min(210px, 55vw);
+    max-width: 55vw;
+    max-height: min(42vh, 280px);
+    top: clamp(64px, 10vh, 96px);
+    bottom: auto;
+  }
+
+  .stats,
+  .stats-4 {
+    left: 12px;
+    width: min(210px, 55vw);
   }
 
   .footer-grid,
@@ -1751,15 +1886,17 @@ button {
   transform: none;
 }
 
-.hero-copy,
-.hero-copy.reveal,
-.hero-copy.reveal-up,
-.hero-copy.reveal-left,
-.hero-copy.reveal-right,
-.hero-copy.reveal.is-visible,
-.hero-copy.reveal-left.is-visible,
-.hero-copy.reveal-right.is-visible {
-  transform: translateX(-50%) !important;
+@media (min-width: 861px) {
+  .hero-copy,
+  .hero-copy.reveal,
+  .hero-copy.reveal-up,
+  .hero-copy.reveal-left,
+  .hero-copy.reveal-right,
+  .hero-copy.reveal.is-visible,
+  .hero-copy.reveal-left.is-visible,
+  .hero-copy.reveal-right.is-visible {
+    transform: translateX(-50%) !important;
+  }
 }
 
 .section-copy.copy-left.reveal-left {
@@ -1891,6 +2028,17 @@ button {
   }
 
   .panel.is-inview > img {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 860px) and (prefers-reduced-motion: reduce) {
+  .hero-copy,
+  .hero-copy.reveal,
+  .hero-copy.reveal.is-visible,
+  .learn-more.reveal,
+  .learn-more.reveal.is-visible,
+  .more-panel {
     transform: none !important;
   }
 }
