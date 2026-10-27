@@ -1,0 +1,19 @@
+---
+description: Auto commit/push BYD site so byd.talbyte.com updates
+alwaysApply: true
+---
+
+# BYD deploy workflow
+
+Live site: https://byd.talbyte.com  
+GitHub: https://github.com/Muhammad-Talha-Qamar/BYD-Dolphin-Surf-website (`main`)
+
+After finishing any code/content changes to this site:
+
+1. Commit with a concise why-focused message
+2. Push to `origin/main`
+3. Hostinger Git auto-deploy updates https://byd.talbyte.com from that push
+4. Do not wait for an explicit commit/push/deploy request
+5. Briefly confirm the subdomain will refresh
+
+Git safety still applies: no force-push to main, no secrets, no amend of already-pushed commits unless asked.
