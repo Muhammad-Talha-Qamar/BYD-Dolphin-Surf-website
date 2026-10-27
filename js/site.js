@@ -327,7 +327,10 @@ function pickStatIcon(title, detail) {
   if (/km|range/.test(t)) return "fa-solid fa-road";
   if (/kwh|capacit/.test(t)) return "fa-solid fa-battery-full";
   if (/0–100|0-100|accel|awd/.test(t)) return "fa-solid fa-gauge-high";
-  return "fa-solid fa-sparkles";
+  if (/torque|n·m|n\.m|nm\b/.test(t)) return "fa-solid fa-rotate";
+  if (/\bkw\b|power|output/.test(t)) return "fa-solid fa-bolt";
+  if (/tow|kg\b|load/.test(t)) return "fa-solid fa-truck";
+  return "fa-solid fa-star";
 }
 
 function enhanceVisualLanguage() {
@@ -410,19 +413,25 @@ function enhanceVisualLanguage() {
     if (!block || block.querySelector(".section-eyebrow")) return;
     const title = h2.textContent.toLowerCase();
     let label = "Highlight";
-    let icon = "fa-solid fa-sparkles";
+    let icon = "fa-solid fa-star";
     if (/design|aesthet|ocean|light/.test(title)) {
       label = "Design";
       icon = "fa-solid fa-pen-nib";
-    } else if (/cabin|interior|seat|console/.test(title)) {
+    } else if (/cabin|interior|seat|console|premium/.test(title)) {
       label = "Interior";
       icon = "fa-solid fa-couch";
     } else if (/safe|secur|protect/.test(title)) {
       label = "Safety";
       icon = "fa-solid fa-shield-halved";
-    } else if (/platform|battery|technolog|innovat/.test(title)) {
+    } else if (/platform|battery|technolog|innovat|hybrid|dmo|grunt/.test(title)) {
       label = "Technology";
       icon = "fa-solid fa-microchip";
+    } else if (/terrain|off.?road|chassis|suspension/.test(title)) {
+      label = "Off-road";
+      icon = "fa-solid fa-mountain";
+    } else if (/utilit|tray|tow|load/.test(title)) {
+      label = "Utility";
+      icon = "fa-solid fa-truck";
     } else if (/family|newest|member/.test(title)) {
       label = "Series";
       icon = "fa-solid fa-water";
