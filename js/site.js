@@ -15,6 +15,7 @@ function headerHTML() {
               <li><a href="./index.html">BYD DOLPHIN SURF</a></li>
               <li><a href="./sealion-6.html">BYD SEALION 6</a></li>
               <li><a href="./sealion-6-dm-i.html">BYD SEALION 6 DM-i</a></li>
+              <li><a href="./shark-6.html">BYD SHARK 6</a></li>
             </ul>
           </li>
           <li class="has-menu">
