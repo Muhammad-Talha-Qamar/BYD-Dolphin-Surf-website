@@ -7,19 +7,33 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <header class="site-header" data-chrome="header"></header>
 
   <main id="top">
-    <section class="hero panel stats-panel">
+    <section class="hero panel">
       <img src="./images/sealion-6/hero.webp" alt="BYD SEALION 6 driving along a coastal mountain road">
-      <div class="hero-copy overlay-center overlay-top">
+      <div class="hero-copy">
         <h1>BYD SEALION 6</h1>
+        <p class="hero-tagline">A family electric SUV shaped by Ocean Aesthetics — spacious, efficient, and ready for every day.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#design">Explore design</a>
+          <a class="btn btn-ghost" href="./dealers.html">Find a dealer</a>
+        </div>
       </div>
-      <ul class="stats overlay-bottom">
+      <a class="scroll-cue" href="#highlights" aria-label="Scroll to highlights"><span></span></a>
+    </section>
+
+    <section class="panel stats-panel" id="highlights">
+      <img src="./images/sealion-6/studio.webp" alt="BYD SEALION 6 studio exterior">
+      <div class="section-copy copy-left" id="design">
+        <h2>Ocean-inspired design</h2>
+        <p>The BYD SEALION 6 applies captivating design philosophy to the SUV market by combining the oceanic aesthetics of BYD design with futuristic touches, resulting in a striking car for eco-conscious families.</p>
+      </div>
+      <ul class="stats">
         <li>
           <h2>Up to 500 km</h2>
           <p>WLTP combined range</p>
@@ -31,17 +45,9 @@
       </ul>
     </section>
 
-    <section class="panel" id="design">
-      <img src="./images/sealion-6/studio.webp" alt="BYD SEALION 6 studio exterior">
-      <div class="section-copy overlay-center overlay-top">
-        <h2>Ocean-inspired design</h2>
-        <p>The BYD SEALION 6 applies captivating design philosophy to the SUV market by combining the oceanic aesthetics of BYD design with futuristic touches, resulting in a striking car for eco-conscious families.</p>
-      </div>
-    </section>
-
     <section class="panel">
       <img src="./images/sealion-6/color.webp" alt="Blue BYD SEALION 6 exterior">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-right">
         <h2>Projecting a greater light</h2>
         <p>The double U-shaped headlights incorporate staggered light clusters that cast a powerful beam, ensuring clearer visibility. The rear exudes sophistication with a continuous taillight designed in a refined water-drop matrix pattern.</p>
       </div>
@@ -49,13 +55,13 @@
 
     <section class="panel" id="cabin">
       <img src="./images/sealion-6/interior.jpg" alt="BYD SEALION 6 interior cabin">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-left">
         <h2>A spacious family cabin</h2>
         <p>A light, airy interior with a rotatable centre screen, panoramic roof, and generous rear seating makes the SEALION 6 a comfortable electric SUV for everyday family life.</p>
       </div>
       <button class="learn-more" type="button" aria-expanded="false" data-panel="cabin-more">
-        <span class="plus" aria-hidden="true">+</span>
-        <span>Learn more</span>
+        <span class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        <span class="learn-label">Learn more</span>
       </button>
       <div class="more-panel" id="cabin-more" hidden>
         <article>
@@ -71,13 +77,13 @@
 
     <section class="panel" id="innovation">
       <img src="./images/sealion-6/cabin.jpg" alt="BYD SEALION 6 dashboard and floating screen">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-right">
         <h2>Innovation</h2>
         <p>BYD has been a pioneering name in the battery industry for more than 29 years. The Blade Battery in the SEALION 6 has passed a series of extreme tests, making it one of the world’s safest batteries.</p>
       </div>
       <button class="learn-more" type="button" aria-expanded="false" data-panel="tech-more">
-        <span class="plus" aria-hidden="true">+</span>
-        <span>Learn more</span>
+        <span class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        <span class="learn-label">Learn more</span>
       </button>
       <div class="more-panel" id="tech-more" hidden>
         <article>
@@ -93,7 +99,7 @@
 
     <section class="panel">
       <img src="./images/sealion-6/tech.jpg" alt="BYD Blade Battery technology">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-left">
         <h2>BYD Blade Battery</h2>
         <p>Featured in the BYD SEALION 6, the Blade Battery brings ultra-safe LFP chemistry and structural strength exclusive to BYD’s electric platform.</p>
       </div>
@@ -103,7 +109,11 @@
       <img src="./images/sealion-6/color.webp" alt="BYD SEALION 6 in motion">
       <div class="cta-copy">
         <h2>BYD SEALION 6</h2>
-        <a class="brochure-btn" href="#footer">DOWNLOAD BROCHURE</a>
+        <p class="cta-note">Ready when you are — explore dealers or download the brochure.</p>
+        <div class="cta-actions">
+          <a class="brochure-btn" href="#footer">Download brochure</a>
+          <a class="btn btn-ghost" href="./dealers.html">Visit dealer</a>
+        </div>
       </div>
     </section>
   </main>

@@ -7,29 +7,38 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <header class="site-header" data-chrome="header"></header>
 
   <main id="top">
     <section class="hero panel">
       <img src="./images/dolphin-surf/hero.webp" alt="BYD Dolphin Surf driving through a colorful city street">
-      <div class="hero-copy overlay-center overlay-top">
+      <div class="hero-copy">
         <h1>BYD DOLPHIN SURF</h1>
+        <p class="hero-tagline">The most individual member of the Ocean Series — sharp, compact, and electric.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#design">Explore design</a>
+          <a class="btn btn-ghost" href="./dealers.html">Find a dealer</a>
+        </div>
       </div>
+      <a class="scroll-cue" href="#stats" aria-label="Scroll to highlights">
+        <span></span>
+      </a>
     </section>
 
     <section class="panel stats-panel" id="stats">
       <img src="./images/dolphin-surf/studio.webp" alt="BYD Dolphin Surf in a bright studio setting">
-      <ul class="stats overlay-bottom">
+      <ul class="stats">
         <li>
           <h2>Blade Battery</h2>
           <p>Ultra-Safe</p>
         </li>
         <li>
-          <h2>30 minutes</h2>
+          <h2><span data-count="30" data-suffix=" minutes">30 minutes</span></h2>
           <p>30% to 80% fast charge</p>
         </li>
         <li>
@@ -41,7 +50,7 @@
 
     <section class="panel">
       <img src="./images/dolphin-surf/city.webp" alt="BYD Dolphin Surf crossing a city street">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-left">
         <h2>The newest family member of the Ocean Series</h2>
         <p>The BYD DOLPHIN SURF is the most individual and dynamic member of the Ocean Series, interpreting the strong vitality of the “Ocean Aesthetics” with its sharp shape and fierce style.</p>
       </div>
@@ -49,13 +58,13 @@
 
     <section class="panel" id="design">
       <img src="./images/dolphin-surf/exterior.webp" alt="Side profile of the BYD Dolphin Surf">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-right">
         <h2>Ocean Aesthetics Design</h2>
         <p>A new sweeping integrated body contour for the BYD DOLPHIN SURF. The single-arc silhouette makes the overall shape more impactful and the lines are smart and smooth. Get ready with the BYD DOLPHIN SURF.</p>
       </div>
       <button class="learn-more" type="button" aria-expanded="false" data-panel="design-more">
-        <span class="plus" aria-hidden="true">+</span>
-        <span>Learn more</span>
+        <span class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        <span class="learn-label">Learn more</span>
       </button>
       <div class="more-panel" id="design-more" hidden>
         <article>
@@ -71,12 +80,12 @@
 
     <section class="panel" id="cabin">
       <img src="./images/dolphin-surf/cabin.webp" alt="Ocean Chic Cabin interior of the BYD Dolphin Surf">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-left">
         <h2>Ocean Chic Cabin</h2>
       </div>
       <button class="learn-more" type="button" aria-expanded="false" data-panel="cabin-more">
-        <span class="plus" aria-hidden="true">+</span>
-        <span>Learn more</span>
+        <span class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        <span class="learn-label">Learn more</span>
       </button>
       <div class="more-panel" id="cabin-more" hidden>
         <article>
@@ -96,7 +105,7 @@
 
     <section class="panel">
       <img src="./images/dolphin-surf/safety.webp" alt="Cutaway showing comprehensive airbag protection">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-right">
         <h2>Comprehensive Security Protection</h2>
         <p>“Safety is the greatest luxury”. BYD DOLPHIN SURF comes standard with airbags for the driver and passenger, as well as front and rear side curtain airbags. The high-end trim even includes front-seat side airbags, which help minimize or eliminate harm during collisions.</p>
       </div>
@@ -104,7 +113,7 @@
 
     <section class="panel" id="platform">
       <img src="./images/dolphin-surf/platform.webp" alt="Transparent view of the e-Platform 3.0 and Blade Battery">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-left">
         <h2>e-Platform 3.0</h2>
         <p>The BYD DOLPHIN SURF features the super-safe “blade battery” and inherits the safety attributes of the e-platform 3.0, bringing users a safe body structure exclusive to pure electric vehicles.</p>
       </div>
@@ -114,7 +123,11 @@
       <img src="./images/dolphin-surf/cta.webp" alt="BYD Dolphin Surf charging outside a modern home">
       <div class="cta-copy">
         <h2>BYD DOLPHIN SURF</h2>
-        <a class="brochure-btn" href="#footer">DOWNLOAD BROCHURE</a>
+        <p class="cta-note">Ready when you are — explore dealers or download the brochure.</p>
+        <div class="cta-actions">
+          <a class="brochure-btn" href="#footer">Download brochure</a>
+          <a class="btn btn-ghost" href="./dealers.html">Visit dealer</a>
+        </div>
       </div>
     </section>
   </main>

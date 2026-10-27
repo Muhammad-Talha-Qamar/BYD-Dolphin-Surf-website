@@ -7,19 +7,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <header class="site-header" data-chrome="header"></header>
 
   <main id="top">
-    <section class="hero panel stats-panel">
+    <section class="hero panel">
       <img src="./images/sealion-6-dmi/hero.webp" alt="BYD SEALION 6 DM-i at sunset in the mountains">
-      <div class="hero-copy overlay-center overlay-top">
+      <div class="hero-copy">
         <h1>BYD SEALION 6 DM-i</h1>
+        <p class="hero-tagline">Plug-in hybrid SUV with Super DM Technology — long range, low consumption, and family-ready space.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#design">Explore design</a>
+          <a class="btn btn-ghost" href="./dealers.html">Find a dealer</a>
+        </div>
       </div>
-      <ul class="stats stats-4 overlay-bottom">
+      <a class="scroll-cue" href="#highlights" aria-label="Scroll to highlights"><span></span></a>
+    </section>
+
+    <section class="panel stats-panel" id="highlights">
+      <img src="./images/sealion-6-dmi/color.webp" alt="BYD SEALION 6 DM-i exterior">
+      <ul class="stats stats-4">
         <li>
           <h2>Up to 1080 km</h2>
           <p>Combined range</p>
@@ -40,14 +50,14 @@
     </section>
 
     <section class="panel" id="design">
-      <img src="./images/sealion-6-dmi/color.webp" alt="BYD SEALION 6 DM-i exterior">
-      <div class="section-copy overlay-center overlay-top">
+      <img src="./images/sealion-6-dmi/color.webp" alt="BYD SEALION 6 DM-i exterior detail">
+      <div class="section-copy copy-left">
         <h2>Exterior ocean design</h2>
         <p>The BYD SEALION 6 DM-i combines oceanic aesthetics with futuristic touches, creating a striking, eco-friendly PHEV SUV for families.</p>
       </div>
       <button class="learn-more" type="button" aria-expanded="false" data-panel="design-more">
-        <span class="plus" aria-hidden="true">+</span>
-        <span>Learn more</span>
+        <span class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        <span class="learn-label">Learn more</span>
       </button>
       <div class="more-panel" id="design-more" hidden>
         <article>
@@ -63,13 +73,13 @@
 
     <section class="panel" id="cabin">
       <img src="./images/sealion-6-dmi/interior.webp" alt="Futuristic interior of the SEALION 6 DM-i">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-right">
         <h2>Futuristic floating centre console</h2>
         <p>The interior features a floating centre console with a double-layer storage compartment that combines practicality with elegance, plus a large rotatable touchscreen as the control hub for connectivity and infotainment.</p>
       </div>
       <button class="learn-more" type="button" aria-expanded="false" data-panel="cabin-more">
-        <span class="plus" aria-hidden="true">+</span>
-        <span>Learn more</span>
+        <span class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        <span class="learn-label">Learn more</span>
       </button>
       <div class="more-panel" id="cabin-more" hidden>
         <article>
@@ -89,13 +99,13 @@
 
     <section class="panel" id="technology">
       <img src="./images/sealion-6-dmi/tech.jpg" alt="BYD Super DM hybrid technology">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-left">
         <h2>BYD Super DM Technology</h2>
         <p>The driving force behind the SEALION 6 DM-i is BYD Super DM (Dual Mode) Technology — an intelligent plug-in hybrid system for energy efficiency, low fuel consumption, performance, and comfort. The “i” symbolises intelligent, energy-efficient driving.</p>
       </div>
       <button class="learn-more" type="button" aria-expanded="false" data-panel="tech-more">
-        <span class="plus" aria-hidden="true">+</span>
-        <span>Learn more</span>
+        <span class="plus" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+        <span class="learn-label">Learn more</span>
       </button>
       <div class="more-panel" id="tech-more" hidden>
         <article>
@@ -115,7 +125,7 @@
 
     <section class="panel" id="safety">
       <img src="./images/sealion-6-dmi/safety.jpg" alt="SEALION 6 DM-i safety systems">
-      <div class="section-copy overlay-center overlay-top">
+      <div class="section-copy copy-right">
         <h2>Enhanced safety as standard</h2>
         <p>Blind Spot Detection, Intelligent Cruise Control, and Rear Cross Traffic Alert and Brake help keep every journey more relaxed and aware.</p>
       </div>
@@ -126,7 +136,10 @@
       <div class="cta-copy">
         <h2>V2L Charge Your Life</h2>
         <p class="cta-note">Vehicle-to-Load turns the SEALION 6 DM-i into a mobile power source for outdoor living.</p>
-        <a class="brochure-btn" href="#footer">DOWNLOAD BROCHURE</a>
+        <div class="cta-actions">
+          <a class="brochure-btn" href="#footer">Download brochure</a>
+          <a class="btn btn-ghost" href="./dealers.html">Visit dealer</a>
+        </div>
       </div>
     </section>
   </main>
