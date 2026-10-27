@@ -295,21 +295,28 @@ function pickStatIcon(title, detail) {
 }
 
 function enhanceVisualLanguage() {
+  document.querySelectorAll(".hero-copy > h1").forEach((h1) => {
+    if (h1.querySelector(".brand-line")) return;
+    const raw = h1.textContent.trim();
+    if (!/^BYD\s+/i.test(raw)) return;
+    const rest = raw.replace(/^BYD\s+/i, "");
+    h1.innerHTML = `<span class="brand-line">BYD</span>${rest}`;
+  });
+
   document.querySelectorAll(".learn-more").forEach((button) => {
     const plus = button.querySelector(".plus");
     if (plus && !plus.querySelector("i")) {
       plus.textContent = "";
       plus.appendChild(iconEl("fa-solid fa-plus"));
     }
-    const label = [...button.childNodes].find(
-      (node) => node.nodeType === Node.ELEMENT_NODE && node !== plus && !node.classList?.contains("plus")
-    );
-    if (label && !label.classList.contains("learn-label")) {
-      label.classList.add("learn-label");
-    }
+    [...button.children].forEach((child) => {
+      if (child !== plus && !child.classList.contains("learn-label") && !child.classList.contains("plus")) {
+        child.classList.add("learn-label");
+      }
+    });
   });
 
-  document.querySelectorAll(".btn:not(.hero-actions .btn)").forEach((btn) => {
+  document.querySelectorAll(".btn").forEach((btn) => {
     if (btn.querySelector(".btn-icon")) return;
     const href = btn.getAttribute("href") || "";
     const text = btn.textContent.toLowerCase();
@@ -437,25 +444,14 @@ function watchWhenInFront(targets, visibleClass) {
   window.setTimeout(revealVisible, 0);
 }
 
-document.querySelectorAll(".hero-copy").forEach((el) => markReveal(el, "up"));
-document.querySelectorAll(".hero-tagline").forEach((el) => markReveal(el, "up", 0.12));
-document.querySelectorAll(".hero-actions").forEach((el) => markReveal(el, "up", 0.2));
-document.querySelectorAll(".section-eyebrow").forEach((el) => markReveal(el, "up", 0.05));
-
-document.querySelectorAll(".section-copy").forEach((block) => {
-  if (block.classList.contains("copy-right")) markReveal(block, "right");
-  else if (block.classList.contains("copy-left")) markReveal(block, "left");
-  else markReveal(block, "up");
+/* Keep hero/section/cta text always visible — do not hide behind reveal opacity */
+document.querySelectorAll(".hero-copy, .section-copy, .cta-copy, .hero-tagline, .hero-actions, .cta-actions, .cta-note, .learn-more").forEach((el) => {
+  el.classList.add("is-visible");
 });
-
-document.querySelectorAll(".cta-copy").forEach((el) => markReveal(el, "left"));
-document.querySelectorAll(".section-copy p, .cta-note").forEach((el) => markReveal(el, "up", 0.12));
-document.querySelectorAll(".cta-actions").forEach((el) => markReveal(el, "up", 0.2));
 
 document.querySelectorAll(".subpage-hero h1").forEach((el) => markReveal(el, "left"));
 document.querySelectorAll(".subpage-hero .lead").forEach((el) => markReveal(el, "right", 0.12));
 document.querySelectorAll(".subpage-body > p").forEach((el) => markReveal(el, "up"));
-document.querySelectorAll(".learn-more").forEach((el) => markReveal(el, "up"));
 document.querySelectorAll(".contact-form, .legal-article").forEach((el) => markReveal(el, "up"));
 
 document.querySelectorAll(".info-card, .store-card").forEach((el, index) => {
