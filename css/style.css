@@ -1591,53 +1591,103 @@ button {
   .stats-4 {
     grid-template-columns: 1fr;
     gap: 8px;
-    width: min(240px, 58vw);
-    left: 16px;
-    right: auto;
-    transform: none;
   }
 
   .stats li {
     padding: 10px 12px;
   }
 
-  .panel,
-  .panel > img {
-    min-height: 70vh;
+  /* Stack photo above copy so the full car reads clearly on phones */
+  .panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    aspect-ratio: auto;
+    max-height: none;
+    overflow: hidden;
   }
 
   .panel > img {
-    object-position: 68% center;
+    position: relative;
+    z-index: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center 40%;
+    background: #0b0f14;
   }
 
+  .panel.img-from-left > img,
+  .panel.img-from-right > img,
+  .panel.is-inview > img,
+  .hero.panel > img {
+    transform: none;
+  }
+
+  .panel::before,
+  .stats-panel::after {
+    display: none;
+  }
+
+  .hero.panel,
   .hero,
   .hero > img {
-    min-height: 100svh;
+    min-height: 0;
   }
 
   .hero > img {
-    object-position: 72% center;
+    aspect-ratio: 4 / 3;
+    object-position: center 36%;
+  }
+
+  .stats-panel > img {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    object-position: center 38%;
+  }
+
+  #design > img {
+    object-position: center 45%;
+  }
+
+  #cabin > img {
+    object-position: center 32%;
+  }
+
+  #platform > img {
+    object-position: center 48%;
+  }
+
+  .cta-panel > img {
+    object-position: center 42%;
   }
 
   .overlay-top {
-    top: 28px;
+    top: auto;
   }
 
-  /* Keep overlay cards on the left so the car stays visible on the right */
   .section-copy,
   .section-copy.copy-left,
   .section-copy.copy-right,
   .section-copy.copy-center,
-  .overlay-center.section-copy {
-    top: clamp(20px, 4vh, 40px);
-    bottom: auto;
-    left: 16px;
+  .overlay-center.section-copy,
+  .hero-copy,
+  .cta-copy {
+    position: relative;
+    left: auto;
     right: auto;
-    width: min(220px, 56vw);
-    max-width: 56vw;
-    transform: none;
+    top: auto;
+    bottom: auto;
+    width: auto;
+    max-width: none;
+    margin: 14px 16px 0;
+    padding: 14px 16px;
+    transform: none !important;
     text-align: left;
-    padding: 10px 12px;
+    z-index: 2;
   }
 
   .section-copy.copy-center h2::after,
@@ -1649,42 +1699,58 @@ button {
   .section-copy.copy-center p,
   .overlay-center.section-copy p {
     margin-inline: 0;
-    -webkit-line-clamp: 3;
-  }
-
-  .stats-panel .section-copy,
-  .stats-panel .section-copy.copy-left,
-  .stats-panel .section-copy.copy-right {
-    top: clamp(20px, 4vh, 40px);
-    bottom: auto;
+    -webkit-line-clamp: 6;
   }
 
   .stats-panel .learn-more {
     display: none;
   }
 
-  /* When learn-more opens, clear the section card so both don't stack over the car */
   .panel:has(.learn-more.is-open) .section-copy {
-    opacity: 0 !important;
-    pointer-events: none;
-    transform: translateX(-16px) !important;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    opacity: 1 !important;
+    pointer-events: auto;
+    transform: none !important;
+  }
+
+  .stats,
+  .stats-4 {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    top: auto;
+    transform: none;
+    width: auto;
+    margin: 14px 16px 18px;
+    z-index: 2;
+  }
+
+  .learn-more {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none !important;
+    margin: 14px 16px 18px;
+    align-items: flex-start;
+    z-index: 2;
   }
 
   .more-panel {
-    left: 16px;
+    position: relative;
+    left: auto;
     right: auto;
-    top: clamp(72px, 11vh, 110px);
+    top: auto;
     bottom: auto;
-    width: min(240px, 58vw);
-    max-width: 58vw;
-    max-height: min(46vh, 320px);
-    height: auto;
+    width: auto;
+    max-width: none;
+    max-height: min(50vh, 360px);
+    margin: 0 16px 20px;
     transform: none;
     overflow: auto;
-    padding: 10px;
+    padding: 12px;
     gap: 8px;
     animation: panel-in-ltr 0.4s var(--ease-soft) forwards;
+    z-index: 2;
   }
 
   .more-panel article {
@@ -1698,25 +1764,6 @@ button {
   .more-panel p {
     font-size: 0.82rem;
     line-height: 1.5;
-  }
-
-  .cta-copy {
-    top: clamp(20px, 4vh, 40px);
-    left: 16px;
-    right: auto;
-    max-width: min(240px, 56vw);
-    width: min(240px, 56vw);
-  }
-
-  .hero-copy {
-    top: clamp(16px, 3vh, 28px);
-    bottom: auto;
-    left: 16px;
-    right: auto;
-    width: min(230px, 56vw);
-    max-width: 56vw;
-    padding: 12px 14px;
-    text-align: left;
   }
 
   .hero-copy,
@@ -1739,6 +1786,10 @@ button {
     justify-content: flex-start;
   }
 
+  .scroll-cue {
+    display: none;
+  }
+
   .footer-grid,
   .footer-bottom {
     grid-template-columns: 1fr 1fr;
@@ -1751,12 +1802,22 @@ button {
 }
 
 @media (max-width: 560px) {
+  .panel > img {
+    aspect-ratio: 16 / 10;
+    object-position: center 38%;
+  }
+
+  .hero > img {
+    aspect-ratio: 5 / 4;
+    object-position: center 34%;
+  }
+
+  .section-copy,
+  .hero-copy,
   .cta-copy {
-    left: 12px;
-    right: auto;
-    width: min(200px, 54vw);
-    max-width: 54vw;
-    padding: 10px 12px;
+    margin: 12px 12px 0;
+    padding: 12px 14px;
+    background: rgba(8, 12, 18, 0.42);
   }
 
   .cta-actions {
@@ -1764,15 +1825,8 @@ button {
     align-items: stretch;
   }
 
-  .hero-copy {
-    left: 12px;
-    width: min(200px, 54vw);
-    max-width: 54vw;
-    padding: 10px 12px;
-  }
-
   .hero-copy h1 {
-    font-size: clamp(1.2rem, 5.5vw, 1.55rem);
+    font-size: clamp(1.2rem, 5.4vw, 1.5rem);
   }
 
   .hero-tagline {
@@ -1788,17 +1842,9 @@ button {
     flex: 0 1 auto;
     width: 100%;
     justify-content: center;
-  }
-
-  .section-copy,
-  .section-copy.copy-left,
-  .section-copy.copy-right,
-  .section-copy.copy-center,
-  .overlay-center.section-copy {
-    left: 12px;
-    width: min(190px, 52vw);
-    max-width: 52vw;
-    padding: 9px 11px;
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 13px;
   }
 
   .section-copy h2 {
@@ -1806,23 +1852,20 @@ button {
   }
 
   .section-copy p {
-    font-size: 0.8rem;
-    -webkit-line-clamp: 3;
-  }
-
-  .more-panel {
-    left: 12px;
-    width: min(210px, 55vw);
-    max-width: 55vw;
-    max-height: min(42vh, 280px);
-    top: clamp(64px, 10vh, 96px);
-    bottom: auto;
+    font-size: 0.84rem;
+    -webkit-line-clamp: 5;
   }
 
   .stats,
-  .stats-4 {
-    left: 12px;
-    width: min(210px, 55vw);
+  .stats-4,
+  .learn-more,
+  .more-panel {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .more-panel {
+    max-height: min(46vh, 320px);
   }
 
   .footer-grid,
