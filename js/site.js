@@ -117,24 +117,47 @@ if (menuToggle && nav) {
 
 const mobileNavMq = window.matchMedia("(max-width: 860px)");
 
-document.querySelectorAll(".has-menu > button").forEach((button) => {
+function closeAllNavMenus() {
+  document.querySelectorAll(".has-menu").forEach((el) => {
+    el.classList.remove("is-open");
+    const btn = el.querySelector(":scope > button");
+    if (btn) btn.blur();
+  });
+}
+
+document.querySelectorAll(".has-menu").forEach((item) => {
+  const button = item.querySelector(":scope > button");
+  if (!button) return;
+
+  // Desktop: stay open only while the cursor is on the heading or its dropdown.
+  item.addEventListener("mouseenter", () => {
+    if (mobileNavMq.matches) return;
+    document.querySelectorAll(".has-menu").forEach((el) => {
+      if (el !== item) el.classList.remove("is-open");
+    });
+    item.classList.add("is-open");
+  });
+
+  item.addEventListener("mouseleave", () => {
+    if (mobileNavMq.matches) return;
+    item.classList.remove("is-open");
+    button.blur();
+  });
+
   button.addEventListener("click", (event) => {
-    // Desktop: hover opens/closes the menu; clicks must not pin it open.
+    // Desktop: clicks must never pin the menu open.
     if (!mobileNavMq.matches) {
       event.preventDefault();
+      button.blur();
       return;
     }
-    const item = button.parentElement;
     const already = item.classList.contains("is-open");
-    document.querySelectorAll(".has-menu").forEach((el) => el.classList.remove("is-open"));
+    closeAllNavMenus();
     if (!already) item.classList.add("is-open");
   });
 });
 
-// Clear any sticky open state when leaving mobile breakpoints
-mobileNavMq.addEventListener("change", () => {
-  document.querySelectorAll(".has-menu").forEach((el) => el.classList.remove("is-open"));
-});
+mobileNavMq.addEventListener("change", closeAllNavMenus);
 
 document.querySelectorAll(".learn-more").forEach((button) => {
   button.addEventListener("click", () => {
@@ -149,11 +172,11 @@ document.querySelectorAll(".learn-more").forEach((button) => {
 
 document.querySelectorAll(".site-nav a").forEach((link) => {
   link.addEventListener("click", () => {
+    closeAllNavMenus();
     if (!nav || !menuToggle) return;
     nav.classList.remove("is-open");
     menuToggle.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
-    document.querySelectorAll(".has-menu").forEach((el) => el.classList.remove("is-open"));
   });
 });
 
@@ -170,7 +193,7 @@ const progressBar = document.querySelector(".scroll-progress span");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const onScrollChrome = () => {
-  document.querySelectorAll(".has-menu").forEach((el) => el.classList.remove("is-open"));
+  closeAllNavMenus();
   if (siteHeader) {
     siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
   }
